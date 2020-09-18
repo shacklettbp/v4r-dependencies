@@ -66,6 +66,7 @@ add_library(ktx SHARED
     KTX-Software/lib/vkformat_check.c
     KTX-Software/lib/vkformat_enum.h
     KTX-Software/lib/vkformat_str.c
+    KTX-shim/shim.c
 )
 
 target_include_directories(ktx
