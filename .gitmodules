@@ -4,9 +4,9 @@
 [submodule "assimp"]
 	path = assimp
 	url = https://github.com/assimp/assimp
-[submodule "basis_universal"]
-	path = basis_universal
-	url = https://github.com/BinomialLLC/basis_universal.git
 [submodule "simdjson"]
 	path = simdjson
 	url = https://github.com/simdjson/simdjson.git
+[submodule "KTX-Software"]
+	path = KTX-Software
+	url = https://github.com/KhronosGroup/KTX-Software.git
