@@ -1,8 +1,8 @@
 IF (NOT glm_FOUND OR USE_BUNDLED)
     message(STATUS "Using bundled GLM")
-    set(PARENT_SCOPE GLM_INCLUDE_OVERRIDE "${CMAKE_CURRENT_SOURCE_DIR}/glm")
+    set(GLM_INCLUDE_OVERRIDE "${CMAKE_CURRENT_SOURCE_DIR}/glm" PARENT_SCOPE)
 ELSE ()
-    set(PARENT_SCOPE GLM_INCLUDE_OVERRIDE "")
+    set(GLM_INCLUDE_OVERRIDE "" PARENT_SCOPE)
 ENDIF()
 
 # KTX's cmake file is currently set up very questionably for use with add_subdirectory
@@ -83,7 +83,6 @@ target_compile_definitions(ktx PRIVATE BASISD_SUPPORT_PVRTC2=0)
 target_compile_definitions(ktx PUBLIC KTX_FEATURE_KTX2)
 target_compile_definitions(ktx PUBLIC KTX_OMIT_VULKAN=1)
 
-
 target_link_libraries(ktx PRIVATE
     dl
     Threads::Threads
@@ -94,3 +93,4 @@ set(SIMDJSON_JUST_LIBRARY ON CACHE INTERNAL "")
 set(SIMDJSON_BUILD_STATIC ON CACHE INTERNAL "")
 add_subdirectory(simdjson EXCLUDE_FROM_ALL)
 
+add_subdirectory(meshoptimizer EXCLUDE_FROM_ALL)

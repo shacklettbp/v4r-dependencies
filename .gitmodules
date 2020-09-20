@@ -7,3 +7,6 @@
 [submodule "KTX-Software"]
 	path = KTX-Software
 	url = https://github.com/KhronosGroup/KTX-Software.git
+[submodule "meshoptimizer"]
+	path = meshoptimizer
+	url = https://github.com/zeux/meshoptimizer.git
