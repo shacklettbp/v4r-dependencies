@@ -1,16 +1,8 @@
 IF (NOT glm_FOUND OR USE_BUNDLED)
     message(STATUS "Using bundled GLM")
-    set(PARENT_SCOPE GLM_INCLUDE_OVERRIDE "${CMAKE_CURRENT_SOURCE_DIR}/external/glm")
+    set(PARENT_SCOPE GLM_INCLUDE_OVERRIDE "${CMAKE_CURRENT_SOURCE_DIR}/glm")
 ELSE ()
     set(PARENT_SCOPE GLM_INCLUDE_OVERRIDE "")
-ENDIF()
-
-IF (NOT ASSIMP_FOUND OR USE_BUNDLED)
-    message(STATUS "Using bundled assimp")
-    set(ASSIMP_BUILD_ASSIMP_TOOLS OFF CACHE BOOL "ASSIMP_BUILD_ASSIMP_TOOLS" FORCE)
-    set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "ASSIMP_BUILD_TESTS" FORCE)
-    add_subdirectory(external/assimp EXCLUDE_FROM_ALL)
-    include_directories(external/assimp/include)
 ENDIF()
 
 # KTX's cmake file is currently set up very questionably for use with add_subdirectory
